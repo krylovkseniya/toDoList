@@ -3,24 +3,19 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport"
-		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>ToDo</title>
-
-	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<title>Список дел</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src="js/script.js" defer></script>
 </head>
 
 <body>
+	<h1 class="title">T O D O</h1>
 
-	<header class="header">
-		<form class="todo-control">
-			<label><input class="header-input" type="text" placeholder="Какие планы?"></label>
-			<button class="header-button" id="add" type="submit"></button>
-		</form>
-	</header>
+	<form class="todo-control">
+		<label><input class="todo-input" type="text" placeholder="Какие планы?"></label>
+		<button class="todo-button" id="add" type="submit"></button>
+	</form>
 
 	<div class="todo-container">
 
@@ -29,8 +24,9 @@
 		<ul class="todo todo-completed" id="completed">
 		</ul>
 	</div>
+	<button class="clear-button">Очистить</button>
 
-
+	<script src="js/script.js"></script>
 </body>
 
 </html>

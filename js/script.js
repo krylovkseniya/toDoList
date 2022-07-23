@@ -1,9 +1,8 @@
-'use strict';
-
 const todoControl = document.querySelector(".todo-control");
-const headerInput = document.querySelector(".header-input");
+const todoInput = document.querySelector(".todo-input");
 const todoList = document.querySelector(".todo-list");
 const todoCompleted = document.querySelector(".todo-completed");
+const clearButton = document.querySelector('.clear-button');
 
 let toDoData = [];
 
@@ -52,14 +51,21 @@ todoControl.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const newToDo = {
-        text: headerInput.value,
+        text: todoInput.value,
         completed: false
     };
 
-    if (headerInput.value !== '') {
+    if (todoInput.value !== '' && todoInput.value.match(/[^\s]/g)) {
         toDoData.push(newToDo);
-        headerInput.value = '';
+        todoInput.value = '';
     }
 
     render();
+});
+
+clearButton.addEventListener('click', function() {
+    toDoData.length = 0;
+    todoList.innerHTML = '';
+    todoCompleted.innerHTML = '';
+    localStorage.clear();
 });
